@@ -23,3 +23,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Credits.unity
     guid: 77eff82badf0add4892571baeaa16d21
+  - enabled: 1
+    path: Assets/RunnerGame 1.unity
+    guid: bf0907588d8c69147af2330ab07053e6
+  - enabled: 1
+    path: Assets/RunnerGame 2.unity
+    guid: 1e88018a7abaae64490229d23644f685
+  - enabled: 1
+    path: Assets/RunnerCredits.unity
+    guid: 853dd77cfa5a354478892c435aaabaee
+  - enabled: 1
+    path: Assets/Score.unity
+    guid: 234353ce33ff8214abb83db9b4ec2be2
