@@ -5,6 +5,6 @@ public class LoadCredits : MonoBehaviour {
 
     public void loadCredit()
     {
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(9);
     }
 }

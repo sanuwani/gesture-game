@@ -7,7 +7,7 @@ public class LoadData : MonoBehaviour {
     public string [] items;
 	// Use this for initialization
 	IEnumerator Start () {
-        WWW itemsData = new WWW("http://localhost:8080/game/php/register.php");
+        WWW itemsData = new WWW("https://sanuwaniudara.000webhostapp.com/register.php");
         yield return itemsData;
         string itemsDataString = itemsData.text;
         items = itemsDataString.Split(' ');

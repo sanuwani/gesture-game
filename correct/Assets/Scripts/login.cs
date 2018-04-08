@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Text.RegularExpressions;
+using UnityEngine.SceneManagement;
 
 
 public class login : MonoBehaviour {
@@ -19,7 +20,7 @@ public class login : MonoBehaviour {
     public GameObject errorMenu;
 
 
-    public string postDataURL = "http://localhost:8080/game/php/data.php";
+    public string postDataURL = "https://sanuwaniudara.000webhostapp.com/data.php";
   
     // Use this for initialization
     void Start () {
@@ -40,15 +41,17 @@ public class login : MonoBehaviour {
         if (valid == "true")
         {
             PlayerPrefs.SetString("userID", userid);
-            currentUI.SetActive(false);
-            nextUI.SetActive(true);
+            //currentUI.SetActive(false);
+            //nextUI.SetActive(true);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else {
             showError();
         }
     }
 	// Update is called once per frame
-	void Update () { 
+	void Update () {
+        
     }
 
     public void submit() {
@@ -77,8 +80,6 @@ public class login : MonoBehaviour {
     }
 
 
-
-    
 
 
 }

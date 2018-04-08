@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
-
+using System.Runtime.InteropServices;
 public class Timer : MonoBehaviour {
+
+    [DllImport("GestureDetect")]
+    public static extern int Detect();
 
 
     public Text timeText;
@@ -15,7 +18,7 @@ public class Timer : MonoBehaviour {
     public int min;
     public int sec;
     private int score=0;
-    private string postDataURL= "http://localhost:8080/game/php/score.php";
+    private string postDataURL= "https://sanuwaniudara.000webhostapp.com/score.php";
 
 
     // Use this for initialization
@@ -25,16 +28,29 @@ public class Timer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+ 
         if (finished)
             return;
         float t = Time.time - startTime;
         min = (int)t / 60;
         sec = (int)t % 60;
-        string minute = ((int)t / 60).ToString();
-        string second = (t % 60).ToString("f2");
-        timeText.text = minute + ":" + second;
-	}
+        //string minute = ((int)t / 60).ToString();
+        //string second = (t % 60).ToString("f2");
+        //timeText.text = minute + ":" + second;
+        int b = Detect();
+        if (b == 1)
+        {
+            timeText.text = "Jump";
+        }
+        if (b == 3)
+        {
+            timeText.text = "Stop";
+        }
+        if (b == 2)
+        {
+            timeText.text = "Go";
+        }
+    }
 
 
     IEnumerator GetScore()
@@ -54,7 +70,7 @@ public class Timer : MonoBehaviour {
         finished = true;
         timeText.color = Color.yellow;
         int num = SceneManager.GetActiveScene().buildIndex;
-        if (num == 7)
+        if (num == 8)
         {
             score = ((min * 60) + sec)*2;
             scoreText.text = score.ToString();

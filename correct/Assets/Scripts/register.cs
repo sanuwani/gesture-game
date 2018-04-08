@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Text.RegularExpressions;
+using UnityEngine.SceneManagement;
 
 public class register : MonoBehaviour {
 
@@ -17,7 +18,7 @@ public class register : MonoBehaviour {
     public GameObject errorMenu;
     public GameObject regMenu;
     //public Button RegButton;
-    public string postDataURL = "http://localhost:8080/game/php/register.php";
+    public string postDataURL = "https://sanuwaniudara.000webhostapp.com//register.php";
     //public GetData data;
 
     // Use this for initialization
@@ -38,8 +39,7 @@ public class register : MonoBehaviour {
         Debug.Log(valid);
         if (valid == "true")
         {
-            currentUI.SetActive(false);
-            nextUI.SetActive(true);
+            showReg();
         }
         else {
             showError();
@@ -74,9 +74,23 @@ public class register : MonoBehaviour {
         //currentUI.SetActive(true);
     }
 
+    IEnumerator RegSuccess()
+    {
+        //currentUI.SetActive(false);
+        regMenu.SetActive(true);
+        yield return new WaitForSeconds(3);
+        regMenu.SetActive(false);
+        currentUI.SetActive(false);
+        nextUI.SetActive(true);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void showError()
     {
         StartCoroutine(LogError());
+    }
+    public void showReg() {
+        StartCoroutine(RegSuccess());
     }
 
 }

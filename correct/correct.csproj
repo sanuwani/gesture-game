@@ -288,22 +288,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GetData.cs" />
+    <Compile Include="Assets\Audio\AudioManager.cs" />
     <Compile Include="Assets\GrassRoadRace\Script\CameraMove.cs" />
-    <Compile Include="Assets\NewBehaviourScript.cs" />
     <Compile Include="Assets\Runner\camera.cs" />
     <Compile Include="Assets\Runner\Game.cs" />
     <Compile Include="Assets\Runner\LoadCredits.cs" />
     <Compile Include="Assets\Runner\LoadNext.cs" />
     <Compile Include="Assets\Runner\player.cs" />
     <Compile Include="Assets\Runner\RunnerCred.cs" />
+    <Compile Include="Assets\Runner\ShowBoard.cs" />
     <Compile Include="Assets\Runner\Timer.cs" />
     <Compile Include="Assets\Runner\TriggerEnd.cs" />
     <Compile Include="Assets\Scripts\Credit.cs" />
     <Compile Include="Assets\Scripts\EndTrigger.cs" />
+    <Compile Include="Assets\Scripts\firstMenu.cs" />
     <Compile Include="Assets\Scripts\FllowPlayer.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameMenu.cs" />
+    <Compile Include="Assets\Scripts\GetData.cs" />
     <Compile Include="Assets\Scripts\LevelComplete.cs" />
     <Compile Include="Assets\Scripts\LoadData.cs" />
     <Compile Include="Assets\Scripts\login.cs" />
@@ -313,8 +315,12 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\register.cs" />
     <Compile Include="Assets\Scripts\Score.cs" />
-    <Compile Include="Assets\SendData.cs" />
-    <Compile Include="Assets\ShowBoard.cs" />
+    <Compile Include="Assets\Scripts\SendData.cs" />
+    <Compile Include="Assets\Test\MovementTest.cs" />
+    <Compile Include="Assets\Test\PLayerTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\ColorfulButtons\Credits.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
